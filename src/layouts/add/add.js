@@ -1,4 +1,5 @@
 import "./add.css";
+import "./../../App.css";
 import addBtn from "./../../assets/add-icon.svg";
 
 export default function AddNote() {

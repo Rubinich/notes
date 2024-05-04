@@ -3,6 +3,7 @@ format pisanja: "--naziv: vrijednost;"
 */
 :root{
   --clr-app: #EFF4F7;
+  --clr-btn: #FFF;
   --clr-clicked-btn: #2B6CFF;
   --clr-fill-btn: #5E5E5E;
 }

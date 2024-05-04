@@ -1,0 +1,19 @@
+.add-btn{
+    display: block;
+    position: fixed;
+    right: 1.5em;
+    bottom: 6em;
+    border-radius: 50%;
+    background-color: var(--clr-btn);
+}
+.add-btn button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 15px -3px var(--clr-fill-btn);
+}
+
+.add-btn img{
+    width: 40px;
+    height: 40px;
+}

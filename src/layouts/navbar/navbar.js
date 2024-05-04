@@ -8,7 +8,7 @@ import toDoFillBtn from "./../../assets/todo-fill.svg"
 
 export default function Navbar() {
     const [isNoteActive, setIsNoteActive] = useState(false);
-    const [textNoteColor, setNoteTextColor] = useState("");
+    const [textNoteColor, setNoteTextColor] = useState("#5E5E5E");
     const isNoteClicked = () => {
         if(isTodoActive){
             isTodoClicked();
@@ -18,7 +18,7 @@ export default function Navbar() {
     };
 
     const [isTodoActive, setIsTodoActive] = useState(false);
-    const [textTodoColor, setTodoTextColor] = useState("");
+    const [textTodoColor, setTodoTextColor] = useState("#5E5E5E");
     const isTodoClicked = () => {
         if(isNoteActive){
             isNoteClicked();
