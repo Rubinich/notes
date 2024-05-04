@@ -1,14 +1,17 @@
 import "./navbar.css";
 import React, { useState } from "react";
-import notesNoFillButton from "./../../assets/note-nofill.svg";
-import notesFillButton from "./../../assets/note-fill.svg";
-import toDoNoFillButton from "./../../assets/todo-nofill.svg"
-import toDoFillButton from "./../../assets/todo-fill.svg"
+import notesNoFillBtn from "./../../assets/note-nofill.svg";
+import notesFillBtn from "./../../assets/note-fill.svg";
+import toDoNoFillBtn from "./../../assets/todo-nofill.svg"
+import toDoFillBtn from "./../../assets/todo-fill.svg"
 
 export default function Navbar() {
     const [isNoteActive, setIsNoteActive] = useState(false);
     const [textNoteColor, setNoteTextColor] = useState("");
     const isNoteClicked = () => {
+        if(isTodoActive){
+            isTodoClicked();
+        }
         setIsNoteActive(!isNoteActive);
         setNoteTextColor(isNoteActive ? "#5E5E5E" : "#2B6CFF");
     };
@@ -16,6 +19,9 @@ export default function Navbar() {
     const [isTodoActive, setIsTodoActive] = useState(false);
     const [textTodoColor, setTodoTextColor] = useState("");
     const isTodoClicked = () => {
+        if(isNoteActive){
+            isNoteClicked();
+        }
         setIsTodoActive(!isTodoActive);
         setTodoTextColor((isTodoActive ? "#5E5E5E" : "#2B6CFF"));
     };
@@ -25,9 +31,9 @@ export default function Navbar() {
             <div className="nav-btn">
                 <button onClick={isNoteClicked}>
                     {isNoteActive ? (
-                        <img src={notesFillButton} alt=""/>
+                        <img src={notesFillBtn} alt=""/>
                     ) : (
-                        <img src={notesNoFillButton} alt=""/>
+                        <img src={notesNoFillBtn} alt=""/>
                     )}
                     <span style={{ color: textNoteColor }}>Notes</span>
                 </button>
@@ -35,9 +41,9 @@ export default function Navbar() {
             <div className="nav-btn">
             <button onClick={isTodoClicked}>
                     {isTodoActive ? (
-                        <img src={toDoFillButton} alt=""/>
+                        <img src={toDoFillBtn} alt=""/>
                     ) : (
-                        <img src={toDoNoFillButton} alt=""/>
+                        <img src={toDoNoFillBtn} alt=""/>
                     )}
                     <span style={{ color: textTodoColor }}>To-dos</span>
                 </button>
