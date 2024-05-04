@@ -1,4 +1,5 @@
 import "./navbar.css";
+import "./../../App.css";
 import React, { useState } from "react";
 import notesNoFillBtn from "./../../assets/note-nofill.svg";
 import notesFillBtn from "./../../assets/note-fill.svg";
