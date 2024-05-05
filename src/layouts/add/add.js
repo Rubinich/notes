@@ -13,7 +13,7 @@ export default function AddNote({ onClick }) {
     };
 
     return (
-        <div className="add-wrapper" onClick={onClick}>
+        <div className="add-wrapper">
             <div className={`add-btn ${isClicked ? 'clicked' : ''}`} onClick={isAddClicked} onTransitionEnd={handleTransitionEnd}>
                 <button><img src={addBtn} alt=""/></button>
             </div>
