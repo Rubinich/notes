@@ -7,8 +7,8 @@ import toDoNoFillBtn from "./../../assets/todo-nofill.svg"
 import toDoFillBtn from "./../../assets/todo-fill.svg"
 
 export default function Navbar() {
-    const [isNoteActive, setIsNoteActive] = useState(false);
-    const [textNoteColor, setNoteTextColor] = useState("#5E5E5E");
+    const [isNoteActive, setIsNoteActive] = useState(true);
+    const [textNoteColor, setNoteTextColor] = useState("#2B6CFF");
     const isNoteClicked = () => {
         if(isTodoActive){
             isTodoClicked();

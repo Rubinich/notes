@@ -8,8 +8,8 @@ button{
 }
 
 .nav-btn img{
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
 }
 
 .nav-wrapper{
@@ -22,7 +22,7 @@ button{
     right: 0;
     left: 0;
     width: 100%;
-    height: 10%;
+    height: 9%;
     border: 3px solid orange;
 }
 
@@ -31,5 +31,8 @@ button{
     flex-direction: column;
     justify-content: center;
     min-width: 50px;
-    height: 100%;
+    outline: 3px solid green;
+}
+.nav-btn span{
+    font-size: 0.75rem;
 }
