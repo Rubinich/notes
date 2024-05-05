@@ -1,9 +1,9 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import { v4 as uuid } from "uuid";
 import "../notes/notes.css";
 import Note from "../note/note";
 import CreateNote from "../createnote/createnote";
-import Navbar from "../navbar/navbar";
+
 function Notes() {
     const [notes, setNotes] = useState([]);
     const [inputText, setInputText] = useState("");
@@ -19,7 +19,6 @@ function Notes() {
             text: inputText,
         },
         ]);
-        //clear the textarea
         setInputText("");
     };
     const deleteNote = (id) => {
@@ -41,7 +40,6 @@ function Notes() {
                 saveHandler={saveHandler}
                 inputText={inputText}
             />
-            <Navbar/>
         </div>
     );
 }
