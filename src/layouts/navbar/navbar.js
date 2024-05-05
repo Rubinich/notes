@@ -9,22 +9,29 @@ import toDoFillBtn from "./../../assets/todo-fill.svg"
 export default function Navbar() {
     const [isNoteActive, setIsNoteActive] = useState(true);
     const [textNoteColor, setNoteTextColor] = useState("#2B6CFF");
+
     const isNoteClicked = () => {
-        if(isTodoActive){
-            isTodoClicked();
+        if(isNoteActive === true && isTodoActive === false){
+            return null;
+        } else if (isNoteActive === false && isTodoActive === true) {
+            setIsNoteActive(true);
+            setNoteTextColor("#2B6CFF");
+            setIsTodoActive(false);
+            setTodoTextColor("#5E5E5E");
         }
-        setIsNoteActive(!isNoteActive);
-        setNoteTextColor(isNoteActive ? "#5E5E5E" : "#2B6CFF");
     };
 
     const [isTodoActive, setIsTodoActive] = useState(false);
     const [textTodoColor, setTodoTextColor] = useState("#5E5E5E");
     const isTodoClicked = () => {
-        if(isNoteActive){
-            isNoteClicked();
+        if(isTodoActive === true && isNoteActive === false){
+            return null;
+        } else if (isTodoActive === false && isNoteActive === true) {
+            setIsNoteActive(false);
+            setNoteTextColor("#5E5E5E");
+            setIsTodoActive(true);
+            setTodoTextColor("#2B6CFF");
         }
-        setIsTodoActive(!isTodoActive);
-        setTodoTextColor((isTodoActive ? "#5E5E5E" : "#2B6CFF"));
     };
 
     return (
