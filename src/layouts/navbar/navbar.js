@@ -12,37 +12,17 @@ export default function Navbar({
     isTodoActive,
     setIsTodoActive,
 }) {
-    /*const [isNoteActive, setIsNoteActive] = useState(true);
-    const [textNoteColor, setNoteTextColor] = useState("#2B6CFF");*/
     const [textNoteColor, setNoteTextColor] = useState("#2B6CFF");
     const [textTodoColor, setTodoTextColor] = useState("#5E5E5E");
 
     const isNoteClicked = () => {
-        /*if(isNoteActive === true && isTodoActive === false){
-            return null;
-        } else if (isNoteActive === false && isTodoActive === true) {
-            setIsNoteActive(true);
-            setNoteTextColor("#2B6CFF");
-            setIsTodoActive(false);
-            setTodoTextColor("#5E5E5E");
-        }*/
         setIsNoteActive(true);
         setNoteTextColor("#2B6CFF");
         setIsTodoActive(false);
         setTodoTextColor("#5E5E5E");
     };
-
-   /* const [isTodoActive, setIsTodoActive] = useState(false);
-    const [textTodoColor, setTodoTextColor] = useState("#5E5E5E");*/
+    
     const isTodoClicked = () => {
-        /*if(isTodoActive === true && isNoteActive === false){
-            return null;
-        } else if (isTodoActive === false && isNoteActive === true) {
-            setIsNoteActive(false);
-            setNoteTextColor("#5E5E5E");
-            setIsTodoActive(true);
-            setTodoTextColor("#2B6CFF");
-        }*/
         setIsNoteActive(false);
         setNoteTextColor("#5E5E5E");
         setIsTodoActive(true);
