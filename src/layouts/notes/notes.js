@@ -1,36 +1,9 @@
-// import React from "react";
-// import { v4 as uuid } from "uuid";
-// import "../notes/notes.css";
-// import Note from "../note/note";
-// import CreateNote from "../createnote/createnote";
-
-
-// function ShowNotes({ notes, setNotes, inputText, setInputText, textHandler, saveHandler, deleteNote }) {
-//     return (
-//         <div className="notes">
-//             {notes && notes.map((note) => (
-//                 <Note
-//                     key={note.id}
-//                     id={note.id}
-//                     text={note.text}
-//                     deleteNote={deleteNote}
-//                 />
-//             ))}
-//             <CreateNote
-//                 textHandler={textHandler}
-//                 saveHandler={saveHandler}
-//                 inputText={inputText}
-//             />
-//         </div>
-//     );
-// }
-// export default ShowNotes;
-
 import { React, useState } from "react";
 import { v4 as uuid } from "uuid";
 import "../notes/notes.css";
 import Note from "../note/note";
 import CreateNote from "../createnote/createnote";
+import Navbar from "../navbar/navbar";
 
 function Notes() {
     const [notes, setNotes] = useState([]);
@@ -55,12 +28,19 @@ function Notes() {
     };
     return (
         <div className="notes">
-            
+            {notes.map((note) => (
+                <Note
+                key={note.id}
+                id={note.id}
+                text={note.text}
+                deleteNote={deleteNote}
+                />
+            ))}
             <CreateNote
                 textHandler={textHandler}
                 saveHandler={saveHandler}
                 inputText={inputText}
-            />
+            /> 
         </div>
     );
 }
