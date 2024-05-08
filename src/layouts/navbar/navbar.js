@@ -34,21 +34,29 @@ export default function Navbar({
             <div className="nav-btn">
                 <button onClick={isNoteClicked}>
                     {isNoteActive ? (
-                        <img src={notesFillBtn} alt="" />
+                        <img src={notesFillBtn} alt="" aria-expanded="true"/>
                     ) : (
-                        <img src={notesNoFillBtn} alt="" />
+                        <img src={notesNoFillBtn} alt=""/>
                     )}
-                    <span style={{ color: textNoteColor }}>Notes</span>
+                    {isNoteActive ? (
+                        <span style={{ color: textNoteColor, fontWeight: 700 }}>Notes</span>
+                    ) : (
+                        <span style={{ color: textNoteColor, fontWeight: 400 }}>Notes</span>
+                    )}
                 </button>
             </div>
-            <div className="nav-btn">
+            <div className="nav-btn" >
                 <button onClick={isTodoClicked}>
                     {isTodoActive ? (
-                        <img src={toDoFillBtn} alt="" />
+                        <img src={toDoFillBtn} alt="" aria-expanded="true"/>
                     ) : (
                         <img src={toDoNoFillBtn} alt="" />
                     )}
-                    <span style={{ color: textTodoColor }}>To-dos</span>
+                    {isTodoActive ? (
+                        <span style={{ color: textTodoColor, fontWeight: 700 }}>To-dos</span>
+                    ) : (
+                        <span style={{ color: textTodoColor, fontWeight: 400 }}>To-dos</span>
+                    )}
                 </button>
             </div>
         </div>
