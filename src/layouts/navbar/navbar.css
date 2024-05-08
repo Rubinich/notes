@@ -40,9 +40,9 @@ button{
     min-width: 50px;
 }
 .nav-btn span{
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 
 .nav-btn img[aria-expanded="true"]{
-    background-color: lightblue;
+    background-color: var(--clr-clicked-btn-bg);
 }

@@ -5,9 +5,11 @@ import AddNote from "./../add/add.js";
 
 export default function ShowNotes() {
     const [showAddScreen, setShowAddScreen] = useState(false);
+
     const handleAddButtonClick = () => {
-        setShowAddScreen(true);
+        setShowAddScreen(!showAddScreen);
     };
+
 
     return (
         <div>

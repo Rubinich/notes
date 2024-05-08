@@ -1,22 +1,21 @@
 import "./App.css";
-import { useState } from "react";
 import Navbar from "./layouts/navbar/navbar.js";
-import ShowNotes from "./layouts/screen1/screen1.js";
-import ShowTodo from './layouts/screen2/screen2';
+import Notes from "./layouts/screen1/screen1.js";
+import Todos from './layouts/screen2/screen2.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
-  const [isNoteActive, setIsNoteActive] = useState(true);
-  const [isTodoActive, setIsTodoActive] = useState(false);
-
 
   return (
     <div className="App">
-      {isNoteActive && <ShowNotes />}
-      {isTodoActive && <ShowTodo />}
-      <Navbar isNoteActive={isNoteActive}
-        setIsNoteActive={setIsNoteActive}
-        isTodoActive={isTodoActive}
-        setIsTodoActive={setIsTodoActive}/>
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Notes />}/>
+          <Route path="/todos" element={<Todos />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

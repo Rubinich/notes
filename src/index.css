@@ -3,6 +3,7 @@
   --clr-btn: #FFF;
   --clr-clicked-btn: #2B6CFF;
   --clr-fill-btn: #5E5E5E;
+  --clr-clicked-btn-bg: #b9ceff;
 }
 
 *, *::after, *::before{
