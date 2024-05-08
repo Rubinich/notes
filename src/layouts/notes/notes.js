@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import "../notes/notes.css";
 import Note from "../note/note";
 import CreateNote from "../createnote/createnote";
+import Navbar from "../navbar/navbar";
 
 function Notes() {
     const [notes, setNotes] = useState([]);
@@ -39,7 +40,7 @@ function Notes() {
                 textHandler={textHandler}
                 saveHandler={saveHandler}
                 inputText={inputText}
-            />
+            /> 
         </div>
     );
 }
