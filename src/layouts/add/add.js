@@ -9,10 +9,10 @@ export default function AddNote() {
         navigate("/make-note")
     }
     
-    const [isClicked, setIsClicked] = useState(false);
-    const addBtnClass = isClicked ? "add-btn clicked" : "add-btn";
+    const [isADClicked, setIsADClicked] = useState(false);
+    const addBtnClass = isADClicked ? "add-btn clicked" : "add-btn";
     const isAddClicked = () => {
-        setIsClicked(!isClicked);
+        setIsADClicked(!isADClicked);
     };
 
     return (
