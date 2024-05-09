@@ -28,7 +28,7 @@ button{
     right: 0;
     left: 0;
     width: 100%;
-    height: 8vh;
+    height: 9vh;
     border: 3px solid orange;
 }
 
@@ -43,6 +43,3 @@ button{
     font-size: 0.7rem;
 }
 
-.nav-btn img[aria-expanded="true"]{
-    background-color: var(--clr-clicked-btn-bg);
-}

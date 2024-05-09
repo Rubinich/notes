@@ -8,6 +8,7 @@ export default function AddNote() {
     const goToMakeNote = () => {
         navigate("/make-note")
     }
+    
     const [isClicked, setIsClicked] = useState(false);
     const addBtnClass = isClicked ? "add-btn clicked" : "add-btn";
     const isAddClicked = () => {
