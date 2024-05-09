@@ -36,36 +36,52 @@ export default function Navbar() {
     return (
         <div className="nav-wrapper">
             <div className="nav-btn">
-                <button onClick={() => goToNotes() || isNoteClicked()}>
-                    {isNoteActive ? (
-                            <img src={notesFillBtn} alt="" style={{ backgroundColor: "#B9CEFF" }}/>
-                        ) : (
-                            <img src={notesNoFillBtn} alt=""/>
-                        )
-                    }
-                    {isNoteActive ? (
-                        <span style={{ color: textNoteColor, fontWeight: 700 }}>Notes</span>
-                    ) : (
-                        <span style={{ color: textNoteColor, fontWeight: 400 }}>Notes</span>
-                    )}
+                <button onClick={() => { goToNotes(); isNoteClicked(); }}>
+                    {renderNotesBtn(isNoteActive, textNoteColor)}
                 </button>
             </div>
             <div className="nav-btn" >
-                <button onClick={() => goToTodos() || isTodoClicked()}>
-                    {isTodoActive ? (
-                            <img src={toDoFillBtn} alt="" style={{ backgroundColor: "#b9ceff" }}/>
-                        ) : (
-                            <img src={toDoNoFillBtn} alt=""/>
-                        )
-                    }
-                    {isTodoActive ? (
-                            <span style={{ color: textTodoColor, fontWeight: 700 }}>Notes</span>
-                        ) : (
-                            <span style={{ color: textTodoColor, fontWeight: 400 }}>Notes</span>
-                        )
-                    }
+                <button onClick={() => { goToTodos(); isTodoClicked(); }}>
+                    {renderTodoBtn(isTodoActive, textTodoColor)}
                 </button>
             </div>
         </div>
     );
+}
+
+function renderNotesBtn(isNoteActive, textNoteColor) {
+    if (isNoteActive) {
+        return (
+            <>
+                <img src={notesFillBtn} alt="" style={{ backgroundColor: "#B9CEFF" }} />
+                <span style={{ color: textNoteColor, fontWeight: 700 }}>Notes</span>
+            </>
+        );
+    } else {
+        return (
+            <>
+                <img src={notesNoFillBtn} alt="" />
+                <span style={{ color: textNoteColor, fontWeight: 400 }}>Notes</span>
+            </>
+        );
+    }
+}
+
+
+function renderTodoBtn(isTodoActive, textTodoColor) {
+    if (isTodoActive) {
+        return (
+            <>
+                <img src={toDoFillBtn} alt="" style={{ backgroundColor: "#b9ceff" }} />
+                <span style={{ color: textTodoColor, fontWeight: 700 }}>To-dos</span>
+            </>
+        );
+    } else {
+        return (
+            <>
+                <img src={toDoNoFillBtn} alt="" />
+                <span style={{ color: textTodoColor, fontWeight: 400 }}>To-dos</span>
+            </>
+        );
+    }
 }
