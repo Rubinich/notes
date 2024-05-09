@@ -7,3 +7,48 @@ format pisanja: "--naziv: vrijednost;"
   height: 100vh;
 }
 
+button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+}
+
+.nav-btn img{
+  width: 28px;
+  height: 28px;
+  padding-block: 0.1em;
+  padding-inline: 1em;
+  border-radius: 15px;
+  margin-block-end: 0.1em;
+  box-sizing: content-box;
+}
+
+.nav-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 9vh;
+  border: 3px solid red;
+}
+
+.nav-btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
+}
+.nav-btn span{
+  font-size: 0.7rem;
+}
+

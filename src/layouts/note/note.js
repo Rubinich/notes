@@ -1,5 +1,6 @@
 import React from "react";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
+
 export default function Note({ id, text, deleteNote }) {
     return (
         <div className="note2"> 

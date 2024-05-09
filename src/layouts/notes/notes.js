@@ -1,9 +1,7 @@
 import { React, useState } from "react";
 import { v4 as uuid } from "uuid";
 import "../notes/notes.css";
-import Note from "../note/note";
 import CreateNote from "../createnote/createnote";
-import Navbar from "../navbar/navbar";
 
 function Notes({ notesList, setNotesList}) {
     const [inputText, setInputText] = useState("");
