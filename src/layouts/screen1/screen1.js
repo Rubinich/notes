@@ -4,6 +4,10 @@ import Notes from "../notes/notes.js";
 import Note from "../note/note.js";
 
 export default function ShowNotes({ notesList }) {
+    // const deleteNote = (id) => {
+    //     const filteredNotes = notes.filter((note) => note.id !== id);
+    //     setNotes(filteredNotes);
+    // };
     return (
         <div>
             <Header />

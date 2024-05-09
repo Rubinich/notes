@@ -21,6 +21,7 @@ function Notes({ notesList, setNotesList}) {
         ]);
         setInputText("");
     };
+    
     return (
         <div className="notes">
             {/*notesList.map((note) => (
