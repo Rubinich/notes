@@ -8,7 +8,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
-    
   const [notes, setNotes] = React.useState([]);
   return (
     <div className="App">

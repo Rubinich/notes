@@ -10,8 +10,14 @@
     padding-inline: 1.5em 0.75em;
     width: 100%;
     height: 8vh;
+    /* margin-bottom: 150px; */
+    z-index: 100;
 }
 
+.notes-container {
+    /* Add a margin-top to create space for the header */
+    margin-top: 8vh; /* Adjust this value according to the height of your header */
+}
 .menu-btn img{
     width: 40px;
     height: 40px;

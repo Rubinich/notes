@@ -21,10 +21,6 @@ function Notes({ notesList, setNotesList}) {
         ]);
         setInputText("");
     };
-    const deleteNote = (id) => {
-        const filteredNotes = notesList.filter((note) => note.id !== id);
-        setNotesList(filteredNotes);
-    };
     return (
         <div className="notes">
             {/*notesList.map((note) => (
