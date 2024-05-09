@@ -5,16 +5,15 @@ import Note from "../note/note";
 import CreateNote from "../createnote/createnote";
 import Navbar from "../navbar/navbar";
 
-function Notes() {
-    const [notes, setNotes] = useState([]);
+function Notes({ notesList, setNotesList}) {
     const [inputText, setInputText] = useState("");
     const textHandler = (e) => {
         setInputText(e.target.value);
     };
 
     const saveHandler = () => {
-        setNotes((prevState) => [
-            ...prevState,
+        setNotesList(() => [
+            ...notesList,
         {
             id: uuid(),
             text: inputText,
@@ -23,19 +22,19 @@ function Notes() {
         setInputText("");
     };
     const deleteNote = (id) => {
-        const filteredNotes = notes.filter((note) => note.id !== id);
-        setNotes(filteredNotes);
+        const filteredNotes = notesList.filter((note) => note.id !== id);
+        setNotesList(filteredNotes);
     };
     return (
         <div className="notes">
-            {notes.map((note) => (
+            {/*notesList.map((note) => (
                 <Note
                 key={note.id}
                 id={note.id}
                 text={note.text}
                 deleteNote={deleteNote}
                 />
-            ))}
+            )) */}
             <CreateNote
                 textHandler={textHandler}
                 saveHandler={saveHandler}
