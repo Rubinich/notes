@@ -5,9 +5,11 @@ import CreateNote from "../createnote/createnote";
 
 function Notes({ notesList, setNotesList}) {
     const [inputText, setInputText] = useState("");
+    
     const textHandler = (e) => {
         setInputText(e.target.value);
     };
+    
 
     const saveHandler = () => {
         setNotesList(() => [
@@ -19,21 +21,9 @@ function Notes({ notesList, setNotesList}) {
         ]);
         setInputText("");
     };
-    // const deleteNote = (id) => {
-    //     const filteredNotes = notes.filter((note) => note.id !== id);
-    //     setNotes(filteredNotes);
-    // };
     
     return (
         <div className="notes">
-            {/*notesList.map((note) => (
-                <Note
-                key={note.id}
-                id={note.id}
-                text={note.text}
-                deleteNote={deleteNote}
-                />
-            )) */}
             <CreateNote
                 textHandler={textHandler}
                 saveHandler={saveHandler}
