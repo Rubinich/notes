@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Notes notesList={notes}/>}/>
+          <Route path="/" element={<Notes notesList={notes} notes={notes} setNotes={setNotes}/>}/>
           <Route path="/make-note" element={<MakeNote notesList={notes} setNotesList={setNotes}/>}/>
         </Routes>
       </BrowserRouter>
