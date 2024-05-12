@@ -26,6 +26,7 @@
     color: #fff;
     resize: none;
     font-size: 18px;
+    min-height: 20px;
 }
 .note textarea:focus {
     outline: none;

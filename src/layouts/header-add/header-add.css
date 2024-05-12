@@ -6,8 +6,8 @@
     max-width: 100vw;
     height: 8vh;
     padding-inline: 0.75em;
-    outline: 3px solid red;
     margin-block-end: 1em;
+    background-color: var(--clr-btn);
 }
 
 .headeradd-wrapper img, .headeradd-wrapper button{
@@ -16,6 +16,6 @@
     transition: all 0.25s ease-in-out;
 }
 
-.returnBtn.clicked button{
-    transform: scale(0.9);
+.returnBtn.clicked button, .confirmBtn.clicked button{
+    transform: scale(0.85);
 }

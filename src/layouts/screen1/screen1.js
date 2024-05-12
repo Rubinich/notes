@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+//import React, { useEffect } from 'react';
 import Header from "./../header/header.js";
 import AddNote from "./../add/add.js";
 import Note from "../note/note.js";
