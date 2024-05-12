@@ -15,15 +15,20 @@ export default function HeaderAdd({ saveHandler }) {
     const isReturnClicked = () => {
         setIsClicked(!isClicked);
     };
-    const confirmBtnClass = isClicked ? "confirmBtn clicked" : "confirmBtn";
+
+    const [isAddClicked, setIsAddClicked] = useState(false);
+    const confirmBtnClass = isAddClicked ? "confirmBtn clicked" : "confirmBtn";
+    const isAddBtnClicked = () => {
+        setIsAddClicked(!isAddClicked);
+    };
 
     return (
         <div className="headeradd-wrapper">
             <div className={returnBtnClass} onClick={isReturnClicked} onTransitionEnd={returnToNotes}>
-                <button><img src={returnBtn} alt=""/></button>
+                <button className="btn1"><img src={returnBtn} alt=""/></button>
             </div>
-            <div className={confirmBtnClass} onClick={saveHandler}>
-                <button><img src={confirmBtn} alt=""/></button>
+            <div className={confirmBtnClass} onClick={isAddBtnClicked} onTransitionEnd={saveHandler}>
+                <button className="btn2"><img src={confirmBtn} alt=""/></button>
             </div>
         </div>
         

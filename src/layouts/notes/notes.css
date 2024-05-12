@@ -117,3 +117,9 @@
     padding: 0.5em 0.25em;
     font-size: 1rem;
 }
+.warning button{
+    transition: all 0.25s ease-in-out;
+}
+.closeBtn.clicked button{
+    transform: scale(0.85);
+}
