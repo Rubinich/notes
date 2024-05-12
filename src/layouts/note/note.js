@@ -1,46 +1,37 @@
-import { React, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
-import copyBtn from "./../../assets/copy-icon.svg"
-import "./note.css"
+import copyBtn from "./../../assets/copy-icon.svg";
+import "./note.css";
 import ClipboardJS from "clipboard";
 
 export default function Note({ id, text, deleteNote }) {
-    const sharedText = text;
-    const [result, setResult] = useState({
-        show: false,
-        content: "",
-    });
+    const [showCopyMessage, setShowCopyMessage] = useState(false);
 
     useEffect(() => {
-        const clipboard = new ClipboardJS('.copyBtn');
-        
+        const clipboard = new ClipboardJS(`.copyBtn${id}`);
+
         clipboard.on('success', function(e) {
-            setResult({ show: true, content: "Copied to clipboard!" });
+            setShowCopyMessage(true);
+            setTimeout(() => {
+                setShowCopyMessage(false);
+            }, 2000); // Hide the message after 2 seconds
         });
         clipboard.on('error', function(e) {
-            setResult({ show: true, content: "Failed to copy to clipboard" });
+            setShowCopyMessage(true);
+            setTimeout(() => {
+                setShowCopyMessage(false);
+            }, 2000); // Hide the message after 2 seconds
         });
 
         return () => clipboard.destroy();
-    }, []);
-
-    useEffect(() => {
-        if (result.show) {
-            const timeoutId = setTimeout(() => {
-                setResult({ show: false, content: "" });
-            }, 2000); 
-
-            return () => clearTimeout(timeoutId); 
-        }
-    }, [result]);
-
+    }, [id]);
 
     return (
         <div className="note2">
             <div className="note__body">{text}</div>
             <div className="note__footer" style={{ justifyContent: "flex-end" }}>
-                <button className="copyBtn" data-clipboard-text={sharedText}><img src={copyBtn} alt="" /></button>
-                {result.show && <span className="result">{result.content}</span>}
+                <button className={`copyBtn copyBtn${id}`} data-clipboard-text={text}><img src={copyBtn} alt="" /></button>
+                {showCopyMessage && <span className="result">Copied to clipboard!</span>}
                 <DeleteForeverOutlinedIcon
                     className="note__delete"
                     onClick={() => deleteNote(id)}
