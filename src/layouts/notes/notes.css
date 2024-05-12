@@ -31,13 +31,13 @@
     flex-direction: column;
     justify-content: space-between;
     word-wrap: break-word;
+    font-size: 18px;
 }
 
 .note__footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
 }
 
 .note textarea {

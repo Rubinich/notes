@@ -15,9 +15,7 @@
 }
 .note__footer {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    justify-content: flex-end;
 }
 .note textarea {
     white-space: pre-wrap;
@@ -51,6 +49,8 @@
     color: #4b1589;
 }
 .note__delete {
+    width: 28px;
+    height: 28px;
     cursor: pointer;
 }
 .note__delete:hover {
@@ -59,3 +59,17 @@
 .char__progress {
     background-color: #fff!important;
 }
+.copyBtn{
+    width: 30px;
+    height: 30px;
+}
+.copyBtn img{
+    width: 30px;
+    height: 30px;
+}
+
+.result{
+    margin-inline: 0.25em 0.5em;
+    text-align: center;
+}
+

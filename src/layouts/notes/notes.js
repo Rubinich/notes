@@ -28,7 +28,6 @@ function Notes({ notesList, setNotesList, disabled }) {
         }
     };
 
-
     return (
         <div className="notes">
             <CreateNote
