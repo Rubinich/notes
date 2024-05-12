@@ -47,6 +47,7 @@
     color: #fff;
     resize: none;
     font-size: 18px;
+    font-family: "Arial", system-ui;
 }
 
 .note textarea:focus {

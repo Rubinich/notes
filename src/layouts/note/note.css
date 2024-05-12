@@ -27,6 +27,7 @@
     resize: none;
     font-size: 18px;
     min-height: 20px;
+    font-family:"Arial", system-ui;
 }
 .note textarea:focus {
     outline: none;
