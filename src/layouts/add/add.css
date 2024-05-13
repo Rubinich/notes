@@ -1,8 +1,8 @@
 .add-btn{
     display: block;
     position: fixed;
-    right: 1.5em;
-    bottom: 6em;
+    right: 3em;
+    bottom: 3em;
     border-radius: 50%;
     background-color: var(--clr-btn);
 }
