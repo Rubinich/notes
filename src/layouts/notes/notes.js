@@ -15,18 +15,17 @@ function Notes({ notesList, setNotesList, disabled }) {
 
     const saveHandler = () => {
         if (inputText.trim() !== "") {
-            setNotesList((prevNotes) => [
-                ...prevNotes,
-                {
-                    id: uuid(),
-                    text: inputText,
-                },
-            ]);
-            setInputText("");
+            const newNote = {
+                id: uuid(),
+                text: inputText,
+            };
+            setNotesList((prevNotes) => [...prevNotes, newNote]);
+            setInputText("");                    
         } else {
             setShowWarning(true);
         }
     };
+    
 
     return (
         <div className="notes">

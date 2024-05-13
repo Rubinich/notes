@@ -13,6 +13,10 @@
     justify-content: space-between;
     word-wrap: break-word;
 }
+.note__body{
+    color: white;
+    font-size: 18px;
+}
 .note__footer {
     display: flex;
     justify-content: flex-end;
@@ -52,8 +56,9 @@
     width: 28px;
     height: 28px;
     cursor: pointer;
+    color: white;
 }
-.note__delete:hover {
+.note__delete:hover, .copyBtn:hover {
     transform: scale(1.1);
 }
 .char__progress {
@@ -71,5 +76,16 @@
 .result{
     margin-inline: 0.25em 0.5em;
     text-align: center;
+    color: white;
+}
+
+.note-style{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    margin: 0.75em;
+    padding: 0.5em 0.75em;
+    min-height: 100px;
 }
 

@@ -1,39 +1,53 @@
-//import React, { useEffect } from 'react';
+import React, { useState } from "react";
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import Header from "./../header/header.js";
 import AddNote from "./../add/add.js";
 import Note from "../note/note.js";
 
-export default function ShowNotes({ notesList, setNotes , notes}) {
+export default function ShowNotes({ notesList, setNotes }) {
     const deleteNote = (id) => {
-        const filteredNotes = notes.filter((note) => note.id !== id);
+        const filteredNotes = notesList.filter((note) => note.id !== id);
         setNotes(filteredNotes);
     };
-    // useEffect(() => {
-    //     console.log('notes',notes)
-    //     window.localStorage.setItem("Notes", JSON.stringify(notes));
-    // }, [notes]);
-    
-    // useEffect(() => {
-    //     const data = window.localStorage.getItem("Notes");
-    //     if (data) {
-    //         setNotes(JSON.parse(data))
-    //     }
-    // }, [])
-    
+
+    const onDragEnd = (result) => {
+        if (!result.destination) {
+            return;
+        }
+
+        const items = Array.from(notesList);
+        const [reorderedItem] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderedItem);
+
+        setNotes(items);
+    };
+
     return (
-        <div>
-            <Header />
-            <div className="notes-container">
-                {notesList.map((note) => (
-                    <Note
-                        key={note.id}
-                        id={note.id}
-                        text={note.text}
-                        deleteNote={deleteNote}
-                    />
-                ))}
+        <DragDropContext onDragEnd={onDragEnd}>
+            <div>
+                <Header />
+                <Droppable droppableId="notes">
+                    {(provided) => (
+                        <div
+                            ref={provided.innerRef}
+                            {...provided.droppableProps}
+                            className="notes-container"
+                        >
+                            {notesList.map((note, index) => (
+                                <Note
+                                    key={note.id}
+                                    id={note.id}
+                                    text={note.text}
+                                    deleteNote={deleteNote}
+                                    index={index}
+                                />
+                            ))}
+                            {provided.placeholder}
+                        </div>
+                    )}
+                </Droppable>
+                <AddNote />
             </div>
-            <AddNote />
-        </div>
+        </DragDropContext>
     );
 }
