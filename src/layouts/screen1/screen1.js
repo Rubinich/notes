@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import Header from "./../header/header.js";
 import AddNote from "./../add/add.js";
