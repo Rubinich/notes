@@ -7,25 +7,21 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [notes, setNotes] = React.useState([]);
-  // useEffect(() => {
-  //   const data = JSON.parse(localStorage.getItem("Notes"));
-  //   if (data) {
-  //     setNotes(data);
-  //   }
-  // }, []);
+  
   useEffect(() => {
-    const data = window.localStorage.getItem('Notes');
+    const data = window.localStorage.getItem('LocalNotes');
     console.log('data', data)
-    if (data !== null) 
+    if (data) 
       setNotes(JSON.parse(data))
-    
   }, [])
 
   useEffect(() => {
-    window.localStorage.setItem('Notes', JSON.stringify(notes));
+    window.localStorage.setItem('LocalNotes', JSON.stringify(notes));
     // console.log('notes',notes)
   }, [notes]);
   
+
+
   return (
     <div className="App">
       <BrowserRouter>
