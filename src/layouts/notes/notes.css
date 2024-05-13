@@ -124,3 +124,10 @@
 .closeBtn.clicked button{
     transform: scale(0.85);
 }
+
+@media (min-width: 425px) {
+    .note{
+        width: 425px;
+        margin: 0 auto;
+    }
+}

@@ -9,11 +9,11 @@ function CreateNote({ textHandler, saveHandler, inputText }) {
             <div className="note" style={{ background: "rgb(43, 108, 255)" }}> 
                 <textarea
                     cols="10"
-                    rows="5"
+                    rows="10"
                     value={inputText}
                     placeholder="Enter note"
                     onChange={textHandler}
-                    maxLength="150"
+                    maxLength="500"
                 ></textarea>
             </div>
         </>
