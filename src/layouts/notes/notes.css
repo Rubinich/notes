@@ -101,7 +101,7 @@
     right: 0;
     max-width: 100%;
     margin-inline: 0.75em;
-    min-height: 10vh;
+    min-height: 70px;
     background-color: #BB0202;
     color: var(--clr-btn);
     border-radius: 0 0 15px 15px;

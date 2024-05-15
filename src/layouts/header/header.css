@@ -8,14 +8,14 @@
     align-items: center;
     justify-content: space-between;
     padding-inline: 1.5em 0.75em;
-    max-width: 100%;
-    height: 8vh;
+    width: 100%;
+    height: 60px;
     z-index: 100;
     background-color: white;
 }
 
 .notes-container {
-    padding-top: 10vh;
+    padding-top: 75px;
 }
 .menu-btn img{
     width: 40px;

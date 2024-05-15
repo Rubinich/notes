@@ -18,7 +18,7 @@ function CreateNote({ textHandler, saveHandler, inputText, maxLength  }) {
             <div className="note" style={{ background: "rgb(43, 108, 255)" }}> 
                 <textarea
                     cols="10"
-                    rows="10"
+                    rows="17"
                     value={inputText}
                     placeholder= {t('placeholder')}
                     onChange={textHandler}
