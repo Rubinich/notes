@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import React from 'react'; 
 
 
-export default function Header() {
+export default function Header() { 
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleDropdown = () => {
