@@ -15,6 +15,9 @@
 }
 .note__body{
     color: white;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 100%;
     font-size: 18px;
 }
 .note__footer {
@@ -83,16 +86,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 350px;
+    white-space: nowrap;
     border-radius: 15px;
-    margin: 0.75em;
+    margin: 0.5em 0.75em;
     padding: 0.5em 0.75em;
     min-height: 100px;
 }
 
 @media (min-width: 425px) {
-    .note-style{
-        width: 375px;
-    }
     .notes-container{
         display: flex;
         flex-direction: row;

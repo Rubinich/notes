@@ -24,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Notes notesList={notes} notes={notes} setNotes={setNotes} />}/>

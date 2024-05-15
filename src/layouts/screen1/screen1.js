@@ -21,7 +21,6 @@ export default function ShowNotes({ notesList, setNotes }) {
 
     return (
         <DragDropContext onDragEnd={onDragEnd}>
-            <div>
                 <Header />
                 <Droppable droppableId="notes">
                     {(provided) => (
@@ -44,7 +43,6 @@ export default function ShowNotes({ notesList, setNotes }) {
                     )}
                 </Droppable>
                 <AddNote />
-            </div>
         </DragDropContext>
     );
 }

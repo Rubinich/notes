@@ -68,7 +68,11 @@
     font-size: 13px;
     cursor: pointer;
 }
-
+.note__body{
+    white-space: pre-wrap;
+    max-width: 100%;
+    word-wrap: break-word;
+}
 .note__save:hover {
     background: #fff;
     border: 1.5px solid #fff;
