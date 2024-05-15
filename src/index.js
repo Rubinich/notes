@@ -3,6 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import self
+// if ("serviceWorker" in navigator) {
+//     window.addEventListener("load", function() {
+//         navigator.serviceWorker
+//         .register("serviceWorker.js")
+//         .then(res => {
+//           // console.log("Service worker registered.")
+//         })
+//         .catch(err => console.log("Service worker not registered.", err))
+//     })
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
