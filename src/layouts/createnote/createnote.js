@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import HeaderAdd from "../header-add/header-add.js";
+import { useTranslation } from 'react-i18next';
 
 
 function CreateNote({ textHandler, saveHandler, inputText, maxLength  }) {
@@ -10,6 +11,7 @@ function CreateNote({ textHandler, saveHandler, inputText, maxLength  }) {
     }, [inputText]);
     maxLength = 1000;
 
+    const { t } = useTranslation();
     return (
         <>
             <HeaderAdd saveHandler={saveHandler}/>
@@ -18,13 +20,12 @@ function CreateNote({ textHandler, saveHandler, inputText, maxLength  }) {
                     cols="10"
                     rows="10"
                     value={inputText}
-                    placeholder="Enter note"
+                    placeholder= {t('placeholder')}
                     onChange={textHandler}
-                    /*maxLength="500"*/
                     maxLength={maxLength}
                 ></textarea>
                 <div className="character-counter">
-                    {remainingCharacters} characters remaining
+                    {remainingCharacters} {t('counter')} 
                 </div>
             </div>
         </>

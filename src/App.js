@@ -3,6 +3,25 @@ import Notes from "./layouts/screen1/screen1.js";
 import MakeNote from "./layouts/notes/notes.js"
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import en from "./lang/en.json"
+import hr from "./lang/hr.json"
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en: {
+        translation: en,
+      },
+      hr: {
+        translation: hr,
+      },
+    },
+    lng: 'en',
+    fallbackLng: 'en',
+  });
 
 
 function App() {
@@ -17,7 +36,6 @@ function App() {
 
   useEffect(() => {
     window.localStorage.setItem('LocalNotes', JSON.stringify(notes));
-    // console.log('notes',notes)
   }, [notes]);
   
 

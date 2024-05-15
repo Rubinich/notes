@@ -2,6 +2,9 @@ import "./header.css";
 import "./../../App.css";
 import { useState } from "react";
 import menuBtn from "./../../assets/menu-icon.svg"
+import { useTranslation } from 'react-i18next';
+import React from 'react'; 
+
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,18 +12,24 @@ export default function Header() {
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
+    const { t, i18n } = useTranslation();
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang);
+    };
 
     return (
         <div className="header-wrapper">
-            <span>My notes</span>
+            <span>{t('header')}</span>
             <div className="menu-btn" onClick={toggleDropdown}>
-                <button><img src={menuBtn} alt=""/></button>
+                <button><img src={menuBtn} alt="" /></button>
                 {isOpen && (
                     <div className="menu-layout">
                         <ul>
-                            <DropDownItem text={"Croatian language"} />
+                            <DropDownItem text={t('lang1')}
+                                onClick={() => changeLanguage('hr')} />
                             <hr></hr>
-                            <DropDownItem text={"English language"} />
+                            <DropDownItem text={t('lang2')}
+                                onClick={() => changeLanguage('en')} />
                         </ul>
                     </div>
                 )}
@@ -29,8 +38,8 @@ export default function Header() {
     );
 }
 
-function DropDownItem(props) {
+function DropDownItem({text, onClick}) {
     return (
-        <li className="dropDownItem">{props.text}</li>
+        <li className="dropDownItem" onClick={onClick}>{text}</li>
     );
 }

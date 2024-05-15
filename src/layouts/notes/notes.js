@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import "../notes/notes.css";
 import CreateNote from "../createnote/createnote";
 import closeBtn from "../../assets/close-icon.svg"
+import { useTranslation } from "react-i18next";
 
 function Notes({ notesList, setNotesList, disabled }) {
     const [inputText, setInputText] = useState("");
@@ -52,10 +53,10 @@ function Warning({ onClose }) {
     const isCloseBtnClicked = () => {
         setIsCloseClicked(!isCloseClicked);
     };
-
+    const { t } = useTranslation();
     return (
         <div className="warning">
-            <span>Please enter your note. Don't waste our space! :)</span>
+            <span>{t("warning")}</span>
             <div className={closeBtnClass} onClick={isCloseBtnClicked} onTransitionEnd={handleClose}>
                 <button><img src={closeBtn} alt="" /></button>
             </div>

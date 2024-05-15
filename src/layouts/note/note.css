@@ -94,7 +94,7 @@
     min-height: 100px;
 }
 
-@media (min-width: 425px) {
+
     .notes-container{
         display: flex;
         flex-direction: row;
@@ -102,5 +102,5 @@
         align-items: center;
         flex-wrap: wrap;
     }
-}
+
 
